@@ -345,8 +345,9 @@ def ssl_CMLE(
 
         features = model(images)
         f1, f2 = torch.split(features, [bsz, bsz], dim=0)
+        
+        loss =  criterion_MSE(f1,caps.cuda()) +  criterion_MSE(f2,caps.cuda()) # For Wiki, due to the vast span of the data
         # features = torch.cat([f1.unsqueeze(1), f2.unsqueeze(1)], dim=1)
-        loss =  criterion_MSE(f1,caps.cuda()) +  criterion_MSE(f2,caps.cuda()) # For Wiki
         # loss = criterion(features, torch.from_numpy(labels)) # For COCO, UCM
 
 
