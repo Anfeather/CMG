@@ -143,15 +143,13 @@ def main():
 
     # model
     parser.add_argument("--arch", type=str, default="resnet50")
-    parser.add_argument("--num-classes", type=int, default=10)
 
     # training
-    parser.add_argument("--dataset", type=str, default="cifar10")
     parser.add_argument("--data-dir", type=str, default="/home/ray/preject/data/wikipedia_class/")
     parser.add_argument("--normalize", action="store_true", default=False)
     parser.add_argument("--batch-size", type=int, default=128)
     parser.add_argument("--size", type=int, default=28)
-    parser.add_argument("--epochs", type=int, default=200)
+    parser.add_argument("--epochs", type=int, default=80)
     parser.add_argument("--lr", type=float, default=1e-4)
     parser.add_argument("--momentum", type=float, default=0.9)
     parser.add_argument("--weight-decay", type=float, default=1e-4)
