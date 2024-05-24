@@ -257,7 +257,7 @@ def main():
         }
 
 
-        
+        model.eval()
         if epoch%1==0:
   
             features_train = get_features(
